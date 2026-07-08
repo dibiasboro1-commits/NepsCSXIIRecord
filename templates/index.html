@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+
+    <!-- Flask Static CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Student Management System</h1>
+    <p>Python Flask and MySQL Based Web Application</p>
+</header>
+
+<div class="menu">
+    <button id="addBtn">Add Student</button>
+    <button id="displayBtn">Display Records</button>
+    <button id="searchBtn">Search Student</button>
+    <button id="updateBtn">Update Student</button>
+    <button id="deleteBtn">Delete Student</button>
+    <button id="exitBtn">Exit</button>
+</div>
+
+<div id="messageArea"></div>
+
+<!-- ================= ADD ================= -->
+
+<section id="addSection">
+    <h2>Add New Student</h2>
+
+    <form id="addForm">
+
+        <div class="form-group">
+            <label>Roll No</label>
+            <input type="number" id="addRollNo" required>
+        </div>
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="addName" required>
+        </div>
+
+        <div class="form-group">
+            <label>Class</label>
+            <input type="text" id="addClass" required>
+        </div>
+
+        <div class="form-group">
+            <label>Section</label>
+            <input type="text" id="addStudentSection" required>
+        </div>
+
+        <div class="form-group">
+            <label>Marks</label>
+            <input type="number" id="addMarks" step="0.01" required>
+        </div>
+
+        <button type="submit">Add Student</button>
+
+    </form>
+
+</section>
+
+<!-- ================= DISPLAY ================= -->
+
+<section id="displaySection">
+
+    <h2>All Student Records</h2>
+
+    <div id="studentsTableContainer"></div>
+
+</section>
+
+<!-- ================= SEARCH ================= -->
+
+<section id="searchSection">
+
+    <h2>Search Student</h2>
+
+    <form id="searchForm">
+
+        <div class="form-group">
+            <label>Roll No</label>
+            <input type="number" id="searchRollNo" required>
+        </div>
+
+        <button type="submit">Search</button>
+
+    </form>
+
+    <div id="searchResult"></div>
+
+</section>
+
+<!-- ================= UPDATE ================= -->
+
+<section id="updateSection">
+
+    <h2>Update Student</h2>
+
+    <form id="updateForm">
+
+        <div class="form-group">
+            <label>Roll No</label>
+            <input type="number" id="updateRollNo" required>
+        </div>
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="updateName">
+        </div>
+
+        <div class="form-group">
+            <label>Class</label>
+            <input type="text" id="updateClass">
+        </div>
+
+        <div class="form-group">
+            <label>Section</label>
+            <input type="text" id="updateSectionInput">
+        </div>
+
+        <div class="form-group">
+            <label>Marks</label>
+            <input type="number" id="updateMarks" step="0.01">
+        </div>
+
+        <button type="submit">Update Student</button>
+
+    </form>
+
+</section>
+
+<!-- ================= DELETE ================= -->
+
+<section id="deleteSection">
+
+    <h2>Delete Student</h2>
+
+    <form id="deleteForm">
+
+        <div class="form-group">
+            <label>Roll No</label>
+            <input type="number" id="deleteRollNo" required>
+        </div>
+
+        <button type="submit">Delete Student</button>
+
+    </form>
+
+    <div id="deleteResult"></div>
+
+</section>
+
+<!-- ================= EXIT ================= -->
+
+<section id="exitSection">
+
+    <h2>Thank You</h2>
+
+    <p>Thank you for using Student Management System.</p>
+
+</section>
+
+<!-- Flask Static JavaScript -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
